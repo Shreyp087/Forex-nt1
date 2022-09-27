@@ -67,7 +67,7 @@ The use of all the files of the project are as follows:
 
 - User is given various options to plot the graph:
     - Yearly
-    - Quartely
+    - Quarterly
     - Monthly
     - Weekly
     - From the dates entered 
