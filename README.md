@@ -77,15 +77,15 @@ The use of all the files of the project are as follows:
 
 - Exchange Rate Graph (Weekly)
 
-![Alt text](https://raw.githubusercontent.com/Shreyp087/Forex-nt1/main/Northern%20Trust%20SS/4%20weekly.png?token=GHSAT0AAAAAABZH5EAMANW7NISPWZ25L4W2YZSXL3Q)
+![Alt text](https://github.com/Shreyp087/Forex-nt1/blob/main/Northern%20Trust%20SS/4%20weekly.png)
 
 - Maximum and Minimum Currency Rates for the shown Graph
 
-![Alt text](https://raw.githubusercontent.com/Shreyp087/Forex-nt1/main/Northern%20Trust%20SS/5%20max%20min.png?token=GHSAT0AAAAAABZH5EANCQGCGHLFSGIO24TMYZSXMZQ)
+![Alt text](https://github.com/Shreyp087/Forex-nt1/blob/main/Northern%20Trust%20SS/5%20max%20min.png)
 
 - Country Currency ISO Code Table
 
-![Alt text](https://raw.githubusercontent.com/Shreyp087/Forex-nt1/main/Northern%20Trust%20SS/6%20table.png?token=GHSAT0AAAAAABZH5EAMT5OASWMEJCQDV32IYZSXN3Q)
+![Alt text](https://github.com/Shreyp087/Forex-nt1/blob/main/Northern%20Trust%20SS/6%20table.png)
 ## Authors
 
 - [20BCE090 Het Piysuhkumar Patel](https://github.com/het4902)
