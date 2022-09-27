@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <title>Currency Exchange</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- chartist CSS -->
+    <link href="plugins/bower_components/chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css"
+        rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <!-- Chart Functionalities -->
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Currency API -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lobster&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Cinzel&family=Cinzel+Decorative:wght@700&family=Lato&family=Poppins:wght@600&family=Rubik+Dirt&display=swap');
+    </style>
+
+    <!-- Final Styling -->
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+<body class="fix-header">
+
+    <!-- Wrapper -->
+
+    <div id="wrapper">
+
+        <!-- Left Sidebar -->
+
+        <div class="navbar-default sidebar" role="navigation">
+            <img src="currency.png" alt="" style="position:fixed;height:100px;width:100px;margin-top: 25px;
+            margin-left: 66px;">
+            <div class="sidebar-nav slimscrollsidebar" style="font-size:13px;">
+                <div class="sidebar-head" style="margin-top: 157px;
+                background-color: #007bff">
+                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu"
+                            style="color:white;">Forex</span></h3>
+                </div>
+                <ul class="nav" id="side-menu" style="margin-top: 130px;">
+                    <li style="padding: 70px 0 0;">
+                        <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw"
+                                aria-hidden="true"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#Section1" class="waves-effect"><i class="fa fa-table fa-fw"
+                                aria-hidden="true"></i>Exchange
+                            Rate Graph</a>
+                    </li>
+                    <li>
+                        <a href="#Section2" class="waves-effect"><i class="fa fa-columns fa-fw"
+                                aria-hidden="true"></i>Currency ISO Codes</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- End Left Sidebar -->
+
+        <!-- Page Content -->
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row bg-title" style="background-color:#007bff;">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title" style="color:white;font-size: 17px;">Dashboard</h4>
+                    </div>
+                </div>
+
+                <!-- Different data widgets -->
+
+
+                <!-- Live Currency Exchange Rates -->
+
+                <div class="row">
+                    <h1 class="text-center">Live Currency Rates</h1>
+                    <div class="col-lg-6 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">From</h3>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <!-- <h3>From</h3> -->
+                                    </span>
+                                </div>
+
+                                <!-- dropdown From Currency Menu -->
+                                <!-- From Currency -->
+                                <select class="form-control currency" id="sel1">
+                                    <option value="">Select One …</option>
+                                    <option value="USD" selected>USD</option>
+                                    <option value="AED">AED</option>
+                                    <option value="ARS">ARS</option>
+                                    <option value="AUD">AUD</option>
+                                    <option value="BGN">BGN</option>
+                                    <option value="BRL">BRL</option>
+                                    <option value="BSD">BSD</option>
+                                    <option value="CAD">CAD</option>
+                                    <option value="CHF">CHF</option>
+                                    <option value="CLP">CLP</option>
+                                    <option value="CNY">CNY</option>
+                                    <option value="COP">COP</option>
+                                    <option value="CZK">CZK</option>
+                                    <option value="DKK">DKK</option>
+                                    <option value="DOP">DOP</option>
+                                    <option value="EGP">EGP</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="FJD">FJD</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="GTQ">GTQ</option>
+                                    <option value="HKD">HKD</option>
+                                    <option value="HRK">HRK</option>
+                                    <option value="HUF">HUF</option>
+                                    <option value="IDR">IDR</option>
+                                    <option value="ILS">ILS</option>
+                                    <option value="INR">INR</option>
+                                    <option value="ISK">ISK</option>
+                                    <option value="JPY">JPY</option>
+                                    <option value="KRW">KRW</option>
+                                    <option value="KZT">KZT</option>
+                                    <option value="MVR">MVR</option>
+                                    <option value="MXN">MXN</option>
+                                    <option value="MYR">MYR</option>
+                                    <option value="NOK">NOK</option>
+                                    <option value="NZD">NZD</option>
+                                    <option value="PAB">PAB</option>
+                                    <option value="PEN">PEN</option>
+                                    <option value="PHP">PHP</option>
+                                    <option value="PKR">PKR</option>
+                                    <option value="PLN">PLN</option>
+                                    <option value="PYG">PYG</option>
+                                    <option value="RON">RON</option>
+                                    <option value="RUB">RUB</option>
+                                    <option value="SAR">SAR</option>
+                                    <option value="SEK">SEK</option>
+                                    <option value="SGD">SGD</option>
+                                    <option value="THB">THB</option>
+                                    <option value="TRY">TRY</option>
+                                    <option value="TWD">TWD</option>
+                                    <option value="UAH">UAH</option>
+                                    <option value="UYU">UYU</option>
+                                    <option value="ZAR">ZAR</option>
+                                </select>
+                            </div>
+
+
+
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
+                                        class="counter text-success" id="fromout"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-6 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">To</h3>
+
+                            <!-- dropdown To Currency Menu -->
+                            <!-- To Currency -->
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <!-- <h3>To</h3> -->
+                                    </span>
+                                </div>
+                                <select class="form-control currency" id="sel2">
+                                    <option value="">Select One …</option>
+                                    <option value="USD">USD</option>
+                                    <option value="AED">AED</option>
+                                    <option value="ARS">ARS</option>
+                                    <option value="AUD">AUD</option>
+                                    <option value="BGN">BGN</option>
+                                    <option value="BRL">BRL</option>
+                                    <option value="BSD">BSD</option>
+                                    <option value="CAD">CAD</option>
+                                    <option value="CHF">CHF</option>
+                                    <option value="CLP">CLP</option>
+                                    <option value="CNY">CNY</option>
+                                    <option value="COP">COP</option>
+                                    <option value="CZK">CZK</option>
+                                    <option value="DKK">DKK</option>
+                                    <option value="DOP">DOP</option>
+                                    <option value="EGP">EGP</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="FJD">FJD</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="GTQ">GTQ</option>
+                                    <option value="HKD">HKD</option>
+                                    <option value="HRK">HRK</option>
+                                    <option value="HUF">HUF</option>
+                                    <option value="IDR">IDR</option>
+                                    <option value="ILS">ILS</option>
+                                    <option value="INR">INR</option>
+                                    <option value="ISK">ISK</option>
+                                    <option value="JPY">JPY</option>
+                                    <option value="KRW">KRW</option>
+                                    <option value="KZT">KZT</option>
+                                    <option value="MVR">MVR</option>
+                                    <option value="MXN">MXN</option>
+                                    <option value="MYR">MYR</option>
+                                    <option value="NOK">NOK</option>
+                                    <option value="NZD">NZD</option>
+                                    <option value="PAB">PAB</option>
+                                    <option value="PEN">PEN</option>
+                                    <option value="PHP">PHP</option>
+                                    <option value="PKR">PKR</option>
+                                    <option value="PLN">PLN</option>
+                                    <option value="PYG">PYG</option>
+                                    <option value="RON">RON</option>
+                                    <option value="RUB">RUB</option>
+                                    <option value="SAR">SAR</option>
+                                    <option value="SEK">SEK</option>
+                                    <option value="SGD">SGD</option>
+                                    <option value="THB">THB</option>
+                                    <option value="TRY">TRY</option>
+                                    <option value="TWD">TWD</option>
+                                    <option value="UAH">UAH</option>
+                                    <option value="UYU">UYU</option>
+                                    <option value="ZAR">ZAR</option>
+                                </select>
+                            </div>
+
+                            <ul class="list-inline two-part">
+                                <li>
+                                    <div id="sparklinedash2"></div>
+                                </li>
+                                <li class="text-right"><i class="ti-arrow-up text-purple"></i>
+                                    <input class="counter text-purple" id="toout" value="0"
+                                        style="outline:none;border:none;justify-content: right;font-size: 23px;width: 150px;text-align: right;">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- conversion display with exchange rate -->
+                <div class="container">
+
+                    <div class="main">
+
+                        <div class="form-group">
+                            <div class="row">
+
+
+                                <div class="col-lg-6 col-sm-6 col-xs-12">
+                                    <label for="oamount">
+                                        <h3>Amount to Convert :</h3>
+                                    </label>
+                                    <input type="text" class="form-control searchBox" placeholder="0.00"
+                                        id="number_box">
+                                </div>
+                                <div class="col-lg-6 col-sm-6 col-xs-12">
+                                    <label for="oamount">
+                                        <h3>Current Exchange Rate :</h3>
+                                    </label>
+                                    <input type="text" class="form-control searchBox" placeholder="0.00" id="Exrates"
+                                        readonly>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- convert reset buttons -->
+
+                        <div class="text-center">
+                            <!-- convert button -->
+                            <button class="btn btn-primary convert m-2" type="submit" id="btn1">
+                                Convert
+                            </button>
+
+                            <!-- reset button -->
+                            <button class="btn btn-primary m-2 b2" onclick="clearVal()">
+                                Reset
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <span id="Section1"></span>
+                <!-- Chart Container -->
+
+                <div class="row">
+                    <hr>
+                    <h1 class="text-center">Exchange Rate Graph</h1>
+
+                    <div class="col-sm-6">
+                        <div class="input-group mb-3">
+
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <h3>From</h3>
+                                </span>
+                            </div>
+                            <!-- chart from option -->
+                            <select class="form-control currency" id="country1" onchange="SelectCountry()">
+                                <option value="">Select One …</option>
+                                <option value="INR">INR</option>
+                                <option value="DZD">DZD</option>
+                                <option value="AUD">AUD</option>
+                                <option value="VEF">VEF</option>
+                                <option value="BWP">BWP</option>
+                                <option value="BRL">BRL</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CLP">CLP</option>
+                                <option value="CNY">CNY</option>
+                                <option value="COP">COP</option>
+                                <option value="CZK">CZK</option>
+                                <option value="DKK">DKK</option>
+                                <option value="EUR">EUR</option>
+                                <option value="HUF">HUF</option>
+                                <option value="ISK">ISK</option>
+                                <option value="IDR">IDR</option>
+                                <option value="IRR">IRR</option>
+                                <option value="ILS">ILS</option>
+                                <option value="JPY">JPY</option>
+                                <option value="KZT">KZT</option>
+                                <option value="HKD">HKD</option>
+                                <option value="KRW">KRW</option>
+                                <option value="LYD">LYD</option>
+                                <option value="IDR">IDR</option>
+                                <option value="MYR">MYR</option>
+                                <option value="MUR">MUR</option>
+                                <option value="MXN">MXN</option>
+                                <option value="NPR">NPR</option>
+                                <option value="NZD">NZD</option>
+                                <option value="NOK">NOK</option>
+                                <option value="OMR">OMR</option>
+                                <option value="PKR">PKR</option>
+                                <option value="PEN">PEN</option>
+                                <option value="PHP">PHP</option>
+                                <option value="PLN">PLN</option>
+                                <option value="QAR">QAR</option>
+                                <option value="PEN">PEN</option>
+                                <option value="RUB">RUB</option>
+                                <option value="SAR">SAR</option>
+                                <option value="SGD">SGD</option>
+                                <option value="ZAR">ZAR</option>
+                                <option value="LKR">LKR</option>
+                                <option value="SEK">SEK</option>
+                                <option value="CHF">CHF</option>
+                                <option value="THB">THB</option>
+                                <option value="TTD">TTD</option>
+                                <option value="TND">TND</option>
+                                <option value="AED">AED</option>
+                                <option value="GBP">GBP</option>
+                                <option value="USD" selected>USD</option>
+                                <option value="UYU">UYU</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <h3>To</h3>
+                                </span>
+                            </div>
+
+                            <!-- chart to options -->
+                            <select class="form-control currency" id="country2" onchange="SelectCountry()">
+                                <option value="">Select One …</option>
+                                <option value="INR">INR</option>
+                                <option value="DZD">DZD</option>
+                                <option value="AUD">AUD</option>
+                                <option value="VEF">VEF</option>
+                                <option value="BWP">BWP</option>
+                                <option value="BRL">BRL</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CLP">CLP</option>
+                                <option value="CNY">CNY</option>
+                                <option value="COP">COP</option>
+                                <option value="CZK">CZK</option>
+                                <option value="DKK">DKK</option>
+                                <option value="EUR">EUR</option>
+                                <option value="HUF">HUF</option>
+                                <option value="ISK">ISK</option>
+                                <option value="IDR">IDR</option>
+                                <option value="IRR">IRR</option>
+                                <option value="ILS">ILS</option>
+                                <option value="JPY">JPY</option>
+                                <option value="KZT">KZT</option>
+                                <option value="HKD">HKD</option>
+                                <option value="KRW">KRW</option>
+                                <option value="LYD">LYD</option>
+                                <option value="IDR">IDR</option>
+                                <option value="MYR">MYR</option>
+                                <option value="MUR">MUR</option>
+                                <option value="MXN">MXN</option>
+                                <option value="NPR">NPR</option>
+                                <option value="NZD">NZD</option>
+                                <option value="NOK">NOK</option>
+                                <option value="OMR">OMR</option>
+                                <option value="PKR">PKR</option>
+                                <option value="PEN">PEN</option>
+                                <option value="PHP">PHP</option>
+                                <option value="PLN">PLN</option>
+                                <option value="QAR">QAR</option>
+                                <option value="PEN">PEN</option>
+                                <option value="RUB">RUB</option>
+                                <option value="SAR">SAR</option>
+                                <option value="SGD">SGD</option>
+                                <option value="ZAR">ZAR</option>
+                                <option value="LKR">LKR</option>
+                                <option value="SEK">SEK</option>
+                                <option value="CHF">CHF</option>
+                                <option value="THB">THB</option>
+                                <option value="TTD">TTD</option>
+                                <option value="TND">TND</option>
+                                <option value="AED">AED</option>
+                                <option value="GBP">GBP</option>
+                                <option value="USD">USD</option>
+                                <option value="UYU">UYU</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- exchange rate graph -->
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title" id="crates"></h3>
+
+                            <div class="chartBox">
+                                <div class="btn-toolbar justify-content-between" role="toolbar"
+                                    aria-label="Toolbar with button groups">
+                                    <div class="btn-group me-2" role="group" aria-label="First group"
+                                        style="font-size:10px">
+                                        <button onclick="updateChart(7)" type="button"
+                                            class="btn btn-outline-secondary " style="font-size:15px">Weekly</button>
+                                        <button onclick="updateChart(25)" type="button" style="font-size:15px"
+                                            class="btn btn-outline-secondary " style="font-size:15px">Monthly</button>
+                                        <button onclick="updateChart(120)" type="button"
+                                            class="btn btn-outline-secondary " style="font-size:15px">Quaterly</button>
+                                        <button onclick="updateChart(250)" type="button"
+                                            class="btn btn-outline-secondary " style="font-size:15px">Yearly</button>
+                                        <button onclick="updateChart(3600)" type="button"
+                                            class="btn btn-outline-secondary " style="font-size:15px"
+                                            id="all">All</button>
+                                    </div>
+                                    <div class="input-group" style="font-size:11.5px">
+
+                                        <input onchange="filterUsingDate()" type="date" id="startdate"
+                                            value="2012-01-03" class="d1">
+
+                                    </div>
+                                    <div class="input-group" style="font-size:11.5px">
+                                        <input onchange="filterUsingDate()" type="date" id="enddate" value="2022-08-26"
+                                            class="d1">
+
+                                    </div>
+                                </div>
+                                <canvas id="myChart">
+                                </canvas>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- maximum mininimum exchange rate display -->
+
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Minimum</h3>
+                            <ul class="list-inline two-part">
+                                <li class="text-left"><i class="ti-arrow-up text-success"></i> <span
+                                        class="counter text-success" id="minval"></span></li>
+                                <li class="text-right"><i class="ti-arrow-up text-success"></i> <span
+                                        class="counter text-success" id="min"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Maximum</h3>
+                            <ul class="list-inline two-part">
+                                <li class="text-left"><i class="ti-arrow-up text-purple"></i>
+                                    <span class="counter text-success" id="maxval"></span>
+                                <li class="text-right"><i class="ti-arrow-up text-purple"></i>
+                                    <span class="counter text-success" id="max"></span>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <span id="Section2"></span>
+
+                <!-- country currency ISO code table  -->
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">COUNTRY CURRENCY CODES</h3>
+                            <div class="table-responsive">
+                                <table class="table" id="myTable">
+                                    <thead>
+                                        <tr>
+                                            <th>SNo</th>
+                                            <th>COUNTERY</th>
+                                            <th>CURRENCY</th>
+                                            <th>CODE</th>
+                                            <th>NUMBER</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <!-- fetching currency code data from data.csv -->
+
+                                        <script>
+                                            onload = fetch("./data.csv").then(res => {
+                                                return res.text()
+                                            }).then(data => {
+                                                let result = data.split(/\r?\n|\r/).map(e => {
+                                                    return e.split(",")
+                                                })
+                                                result.forEach(e => {
+                                                    let m = e.map(e => {
+                                                        return `<td>${e}</td>`;
+                                                    }).join("")
+                                                    let ce = document.createElement("tr");
+                                                    ce.innerHTML = m;
+                                                    if (ce.innerText != "") {
+                                                        document.querySelector("table").appendChild(ce);
+                                                    }
+
+                                                })
+                                            })
+                                        </script>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- footer  -->
+
+                <footer class="footer text-center"> 2022 &copy; Currency Exchanger </footer>
+            </div>
+
+
+        </div>
+
+        <!-- All Jquery -->
+        <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Menu Plugin JavaScript -->
+        <script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+        <!--slimscroll JavaScript -->
+        <script src="js/jquery.slimscroll.js"></script>
+        <!--Wave Effects -->
+        <script src="js/waves.js"></script>
+        <!--Counter js -->
+        <script src="plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+        <script src="plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+        <!-- chartist chart -->
+        <script src="plugins/bower_components/chartist-js/dist/chartist.min.js"></script>
+        <script
+            src="plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+        <!-- Sparkline chart JavaScript -->
+        <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="js/custom.min.js"></script>
+        <script src="js/dashboard1.js"></script>
+        <script src="plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+        <!-- linking script.js file -->
+        <script src="exchange.js"></script>
+
+        <!-- Chart Functionality -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"
+            integrity="sha512-MefNfAGJ/pEy89xLOFs3V6pYPs6AmUhXJrRlydI/9wZuGrqxmrdQ80zKHUcyadAcpH67teDZcBeS6oMJLPtTqw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="chart_functionality.js"></script>
+</body>
+
+</html>
