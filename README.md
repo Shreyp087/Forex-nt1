@@ -53,6 +53,30 @@ The use of all the files of the project are as follows:
 **Library:** ChartJS, D3
 
 
+## How to use the currency exchange value 
+
+- Firstly, select the countries for which we want currency exchange value.
+
+- After which enter the value in the amount field.
+
+- Click on convert buttons and get the exchange value.
+
+## How to use the currency exchange graph
+
+- Firstly, select the countries for which we want currency exchange graph.
+
+- User is given various options to plot the graph:
+    - Yearly
+    - Quartely
+    - Monthly
+    - Weekly
+    - From the dates entered 
+
+- The graph will be created once user clicks on one of the buttons or inputs the date.
+
+- User should note that the graph will only be created after the 2 countries are created and the button is clicked or dates are selected.
+
+
 ## Screenshots
 
 - Live Currency Rates
