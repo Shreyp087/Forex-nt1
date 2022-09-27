@@ -74,7 +74,7 @@ The use of all the files of the project are as follows:
 
 - The graph will be created once user clicks on one of the buttons or inputs the date.
 
-- User should note that the graph will only be created after the 2 countries are created and the button is clicked or dates are selected.
+- User should note that the graph will only be created after the 2 countries are selected and the button is clicked or dates are selected.
 
 
 ## Screenshots
